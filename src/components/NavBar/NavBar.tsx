@@ -1,5 +1,5 @@
 import React, { type ReactElement } from 'react'
-import { NavBarContainer } from './styles'
+import { NavBarContainer, TitleDiv } from './styles'
 import { NavBarOption } from '../index'
 import { v4 as uuid } from 'uuid'
 
@@ -13,9 +13,12 @@ interface NavBarProps {
 const NavBar = ({ options }: NavBarProps): ReactElement => {
   return (
     <NavBarContainer>
+      <TitleDiv>
+        <h1>Admin</h1>
+      </TitleDiv>
       {
         options.map((option) => {
-          return <NavBarOption key={uuid()} name={option.name} optionNumber={option.optionNumber}/>
+          return <NavBarOption key={uuid()} name={option.name} optionNumber={option.optionNumber} />
         })
       }
     </NavBarContainer>
