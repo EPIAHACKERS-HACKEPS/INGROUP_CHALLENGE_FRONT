@@ -1,6 +1,6 @@
 import React, { type ReactElement } from 'react'
 import { ContentDiv, MainDiv } from './styles'
-import { DashboardSlide, NavBar } from '../index'
+import { NavBar, Slide } from '../index'
 
 const App = (): ReactElement => {
   return (
@@ -9,7 +9,7 @@ const App = (): ReactElement => {
         <NavBar/>
       </ContentDiv>
       <ContentDiv>
-        <DashboardSlide/>
+        <Slide/>
       </ContentDiv>
     </MainDiv>
 

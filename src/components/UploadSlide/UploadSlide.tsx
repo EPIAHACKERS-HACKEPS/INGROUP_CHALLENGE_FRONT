@@ -1,11 +1,11 @@
 import React, { type ReactElement } from 'react'
 
-const _TEMPLATE_ = (): ReactElement => {
+const UploadSlide = (): ReactElement => {
   return (
     <div>
-      __TEMPLATE__
+      UploadSlide
     </div>
   )
 }
 
-export default _TEMPLATE_
+export default UploadSlide

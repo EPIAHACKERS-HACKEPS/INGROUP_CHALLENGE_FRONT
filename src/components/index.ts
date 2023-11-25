@@ -1,6 +1,7 @@
 export { default as App } from './App'
 export { default as Router } from './Router'
 export { default as NavBar } from './NavBar'
+export { default as Slide } from './Slide'
 export { default as DashboardSlide } from './DashboardSlide'
-export { default as Dashboard } from './Dashboard'
 export { default as UploadSlide } from './UploadSlide'
+export { default as CommentsSlide } from './CommentsSlide'

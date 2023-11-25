@@ -1,12 +1,11 @@
 import React, { type ReactElement } from 'react'
-import { DashboardSlideContainer } from './styles'
 
-const _TEMPLATE_ = (): ReactElement => {
+const DashboardSlide = (): ReactElement => {
   return (
-    <DashboardSlideContainer>
-      __TEMPLATE__
-    </DashboardSlideContainer>
+    <div>
+      DashboardSlide
+    </div>
   )
 }
 
-export default _TEMPLATE_
+export default DashboardSlide
