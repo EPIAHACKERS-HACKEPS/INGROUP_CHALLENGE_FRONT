@@ -2,8 +2,9 @@ import styled from '@emotion/styled'
 
 export const NavBarContainer = styled.nav`
   display: flex;
-  justify-content: center;
-  align-items: start;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
   background-color: #881d1c;
   color: white;
   width: 15vw;

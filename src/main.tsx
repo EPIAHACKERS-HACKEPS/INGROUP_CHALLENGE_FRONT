@@ -4,13 +4,13 @@ import { Router } from './components'
 import './index.css'
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
-import dashboardNavBar from './reducers/dashboardNavBar'
+import { dashboardReducer } from './reducers/dashboardNavBar'
 
 const root = document.getElementById('root')
 
 const store = configureStore({
   reducer: {
-    dashboardNavBar
+    dashboardReducer
   }
 })
 

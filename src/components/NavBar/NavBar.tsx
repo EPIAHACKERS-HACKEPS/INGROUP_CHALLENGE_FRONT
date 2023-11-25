@@ -2,15 +2,12 @@ import React, { type ReactElement } from 'react'
 import { NavBarContainer } from './styles'
 import NavBarOption from '../NavBarOption/NavBarOption'
 
-interface NavBarProps {
-  selected: number
-}
-
-const NavBar = ({ selected }: NavBarProps): ReactElement => {
+const NavBar = (): ReactElement => {
   return (
     <NavBarContainer>
-      <NavBarOption name="Home" optionNumber={0}/>
-      <NavBarOption name="About" optionNumber={1}/>
+      <NavBarOption name="Dashboard" optionNumber={0}/>
+      <NavBarOption name="Comments" optionNumber={1}/>
+      <NavBarOption name="Upload" optionNumber={2}/>
     </NavBarContainer>
   )
 }
