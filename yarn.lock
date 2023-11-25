@@ -1788,6 +1788,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/uuid@npm:^9":
+  version: 9.0.7
+  resolution: "@types/uuid@npm:9.0.7"
+  checksum: c7321194aeba9ea173efd1e721403bdf4e7ae6945f8f8cdbc87c791f4b505ccf3dbc4a8883d90b394ef13b7c2dc778045792b05dbb23b3c746f8ea347804d448
+  languageName: node
+  linkType: hard
+
 "@types/yargs-parser@npm:*":
   version: 21.0.3
   resolution: "@types/yargs-parser@npm:21.0.3"
@@ -4345,6 +4352,7 @@ __metadata:
     "@types/eslint": "npm:^8"
     "@types/react": "npm:^18.2.38"
     "@types/react-dom": "npm:^18.2.17"
+    "@types/uuid": "npm:^9"
     "@typescript-eslint/eslint-plugin": "npm:^6.12.0"
     "@typescript-eslint/parser": "npm:^6.12.0"
     "@vitejs/plugin-react-swc": "npm:^3.5.0"
@@ -4372,6 +4380,7 @@ __metadata:
     sass: "npm:^1.69.5"
     ts-node: "npm:^10.9.1"
     typescript: "npm:^5.3.2"
+    uuid: "npm:^9.0.1"
     vite: "npm:^5.0.2"
   languageName: unknown
   linkType: soft
@@ -7424,6 +7433,15 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
   checksum: a676216affc203876bd47981103f201f28c2731361bb186367e12d287a7566763213a8816910c6eb88265eccd4c230426eb783d64c373c4a180905be8820ed8e
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "uuid@npm:9.0.1"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 561d3b499a6aa9613d64693ff3fc6d6b601fc117d34867794aef4fe845b072dba20f1cf04d8be684bd06fcf0027c14f4abfee4c8b4f3f109ae822adeb168d863
   languageName: node
   linkType: hard
 
