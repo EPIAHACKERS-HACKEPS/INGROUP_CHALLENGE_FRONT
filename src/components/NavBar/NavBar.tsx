@@ -1,13 +1,22 @@
 import React, { type ReactElement } from 'react'
 import { NavBarContainer } from './styles'
-import NavBarOption from '../NavBarOption/NavBarOption'
+import { NavBarOption } from '../index'
 
-const NavBar = (): ReactElement => {
+interface NavBarProps {
+  options: Array<{
+    name: string
+    optionNumber: number
+  }>
+}
+
+const NavBar = ({ options }: NavBarProps): ReactElement => {
   return (
     <NavBarContainer>
-      <NavBarOption name="Dashboard" optionNumber={0}/>
-      <NavBarOption name="Comments" optionNumber={1}/>
-      <NavBarOption name="Upload" optionNumber={2}/>
+      {
+        options.map((option) => {
+          return <NavBarOption name={option.name} optionNumber={option.optionNumber}/>
+        })
+      }
     </NavBarContainer>
   )
 }

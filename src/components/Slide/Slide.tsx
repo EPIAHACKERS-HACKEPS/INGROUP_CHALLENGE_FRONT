@@ -3,14 +3,14 @@ import { useSelector } from 'react-redux'
 import { CommentsSlide, DashboardSlide, UploadSlide } from '../index'
 
 const Slide = (): ReactElement => {
-  const getDashboardOption = useSelector((state: any) => state.dashboardReducer.selected)
+  const dashboardOption = useSelector((state: any) => state.dashboardReducer.selected)
 
   return (
-    <div>
-      {getDashboardOption === 0 && <DashboardSlide/>}
-      {getDashboardOption === 1 && <CommentsSlide/>}
-      {getDashboardOption === 2 && <UploadSlide/>}
-    </div>
+    <>
+      {dashboardOption === 0 && <DashboardSlide/>}
+      {dashboardOption === 1 && <CommentsSlide/>}
+      {dashboardOption === 2 && <UploadSlide/>}
+    </>
   )
 }
 
