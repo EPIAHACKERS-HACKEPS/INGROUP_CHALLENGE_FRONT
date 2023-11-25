@@ -1,0 +1,18 @@
+.title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 50px;
+}
+.header{
+  display: flex;
+  align-items: center;
+  width: 96%;
+  /* margin-left: 30px; */
+  /* padding-left: 10px; */
+  justify-content: flex-start;
+}
+.dropdown{
+  margin-bottom: 10px;
+  margin-left: auto;
+  box-sizing: border-box;
+}
