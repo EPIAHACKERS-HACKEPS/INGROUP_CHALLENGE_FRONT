@@ -6,7 +6,8 @@ module.exports = {
   plugins: [
     "react",
     "@typescript-eslint",
-    "react-hooks"
+    "react-hooks",
+    "testing-library",
   ],
   parserOptions: {
     project: './tsconfig.json',
