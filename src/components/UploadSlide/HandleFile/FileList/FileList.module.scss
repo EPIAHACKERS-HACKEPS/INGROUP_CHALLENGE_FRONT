@@ -1,13 +1,12 @@
 .fileItem {
     list-style: none;
-    margin: 1.2em 0;
     background-color: white;
     border-radius: 5px;
     display: flex;
-    padding: 1.2em 1.5em;
+    padding: 0px;
     overflow: hidden;
-    width: 90%;
-    margin-left: 40px;
+    width: 100%;
     height: 100%;
+    margin-top: 20px;
     flex-direction: column;
 }

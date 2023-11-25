@@ -1,18 +1,21 @@
 .title {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-left: 50px;
+font-family: Tahoma, sans-serif;
+font-size: 10px;
+padding-bottom: 25px;
+margin-bottom: 20px;
+border-bottom: 2px solid lightgrey;
 }
 .header{
-  display: flex;
-  align-items: center;
-  width: 96%;
-  /* margin-left: 30px; */
-  /* padding-left: 10px; */
-  justify-content: flex-start;
+    width: 100%;
+    margin: 20px 0px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
-.dropdown{
-  margin-bottom: 10px;
-  margin-left: auto;
-  box-sizing: border-box;
+.centro{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding: 0px 70px;
 }

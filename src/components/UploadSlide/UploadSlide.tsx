@@ -14,9 +14,9 @@ function App() {
     };
 
     return (
-        <div>
+        <div className={styles.centro}>
             <div className={styles.header}>
-                <div className={styles.title}>Subir archivos</div>
+                <div className={styles.title}><h1>Subir archivos</h1></div>
                 <div className={styles.dropdown}>
                 </div>
             </div>
