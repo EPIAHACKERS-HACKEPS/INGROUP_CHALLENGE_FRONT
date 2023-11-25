@@ -1,16 +1,18 @@
 import React, { type ReactElement } from 'react'
-import { CardImage, CardTitle, StyledCard, StyledCardHeader, StyledCardText } from './styles'
+import { CardImage, CardTitle, StyledCard, StyledCardText } from './styles'
 
-const Card = (): ReactElement => {
+interface CardProps {
+  title: string
+  image: string
+  text: string
+}
+
+const Card = ({ image, text, title }: CardProps): ReactElement => {
   return (
     <StyledCard>
-      <StyledCardHeader>
-        <CardImage/>
-        <CardTitle> Bugs </CardTitle>
-      </StyledCardHeader>
-      <StyledCardText>
-        999999
-      </StyledCardText>
+      <CardTitle>{title}</CardTitle>
+      <StyledCardText>{text}</StyledCardText>
+      <CardImage url={image}/>
     </StyledCard>
   )
 }
