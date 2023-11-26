@@ -29,7 +29,7 @@ const DashboardSlide = (): ReactElement => {
       const response = await result.json()
       dispatch(setDashboardCount({
         bugs: response.bugs,
-        features: response.features_requests
+        features: response.feature_requests
       }))
     }).catch(() => {
     }).finally(() => {
@@ -50,10 +50,10 @@ const DashboardSlide = (): ReactElement => {
             />
           </>
           : <>
-            <ProgressBar percentage={((dashboardCount.features + dashboardCount.bugs) / dashboardCount.features) * 100}
+            <ProgressBar percentage={(dashboardCount.features / (dashboardCount.features + dashboardCount.bugs)) * 100}
                          name={'FEATURES'} color={'green'} icon={RiPlantFill}/>
             <NumberBar number={dashboardCount.features} name={'PENDING FEATURES'} color={'green'} icon={RiPlantFill}/>
-            <ProgressBar percentage={((dashboardCount.features + dashboardCount.bugs) / dashboardCount.bugs) * 100}
+            <ProgressBar percentage={(dashboardCount.bugs / (dashboardCount.features + dashboardCount.bugs)) * 100}
                          name={'BUGS'} color={'#881d1c'} icon={RiBugFill}/>
             <NumberBar number={dashboardCount.bugs} name={'PENDING BUGS'} color={'#881d1c'} icon={RiBugFill}/>
           </>}
