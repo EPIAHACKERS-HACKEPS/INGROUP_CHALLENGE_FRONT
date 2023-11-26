@@ -5,13 +5,15 @@ import './index.css'
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 import { dashboardReducer, loginReducer } from './reducers'
+import userStoryReducer from './reducers/userStory'
 
 const root = document.getElementById('root')
 
 const store = configureStore({
   reducer: {
     dashboardReducer,
-    loginReducer
+    loginReducer,
+    userStoryReducer
   }
 })
 

@@ -2,12 +2,15 @@ import React, { type ReactElement, useState } from 'react'
 import FileList from './HandleFile/FileList/FileList'
 import styles from './upload.module.scss'
 import FileUpload from './HandleFile/FileUpload/fileUpload'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addUserStory } from '../../reducers/userStory'
+import { Error } from './styles'
 
 const UploadSlide = (): ReactElement => {
   const [files, setFiles] = useState<File[]>([])
-  const [repoId, setRepoId] = useState<number>(0)
+  const [error, setError] = useState<string>('')
   const token: string = useSelector((state: any) => state.loginReducer.token)
+  const dispatch = useDispatch()
   const removeFile = (filename: string): void => {
     console.log(filename)
     setFiles(files.filter((file) => file.name !== filename))
@@ -30,7 +33,13 @@ const UploadSlide = (): ReactElement => {
         body: pdf
       }).then(async (result) => {
         const response = await result.json()
-        console.log(response)
+        if (result.status === 200) {
+          if (response.userStory !== undefined) {
+            dispatch(addUserStory(response.userStory))
+          } else {
+            setError(response.response)
+          }
+        }
       }).catch((error) => {
         console.log(error)
       })
@@ -46,12 +55,11 @@ const UploadSlide = (): ReactElement => {
       </div>
       <FileUpload
         files={files}
-        repoId={repoId}
         setFiles={setFiles}
-        removeFile={removeFile}
       />
       <FileList files={files} removeFile={removeFile}/>
       <button className={styles.sendButton} onClick={handleClick}>Enviar</button>
+      {error !== '' && <Error>{error}</Error>}
 
     </div>
   )
