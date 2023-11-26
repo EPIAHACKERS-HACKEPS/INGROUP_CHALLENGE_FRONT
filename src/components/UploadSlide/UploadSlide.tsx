@@ -62,19 +62,19 @@ const UploadSlide = (): ReactElement => {
           )
         : (
           <>
-            <div className={styles.header}>
-              <div className={styles.title}><h1>Subir archivos</h1></div>
-              <div className={styles.dropdown}>
-              </div>
-            </div>
-            <FileUpload
-              files={files}
-              setFiles={setFiles}
-            />
-            <FileList files={files} removeFile={removeFile}/>
+                 <div className={styles.header}>
+        <div className={styles.title}><h1>Subir archivos</h1></div>
+        <div className={styles.dropdown}>
+        </div>
+      </div>
+      <FileUpload
+        files={files}
+        setFiles={setFiles}
+      />
             <button className={styles.sendButton} onClick={handleClick}>Enviar</button>
-            {error !== '' && <Error>{error}</Error>}
-          </>
+      <FileList files={files} removeFile={removeFile}/>
+      {error !== '' && <Error>{error}</Error>}
+</>
           )}
     </div>
   )

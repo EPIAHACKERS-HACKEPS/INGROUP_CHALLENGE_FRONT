@@ -19,3 +19,19 @@ border-bottom: 2px solid lightgrey;
   align-items: center;
   padding: 0px 70px;
 }
+.sendButton {
+  background-color: #eeeeee;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  margin: 10px 0px;
+  padding: 10px 16px;
+  margin-left: calc(100% - 65px);
+  margin-top: 30px;
+}
