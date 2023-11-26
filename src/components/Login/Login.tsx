@@ -3,6 +3,8 @@ import { LoginButton, LoginDiv, LoginInput } from './styles'
 import { useDispatch } from 'react-redux'
 import { setLoginToken } from '../../reducers/login'
 import { PuffLoader } from 'react-spinners'
+import Title from '../Title'
+import { v4 as uuid } from 'uuid'
 
 const Login = (): ReactElement => {
   const [email, setEmail] = React.useState<string>('')
@@ -51,6 +53,7 @@ const Login = (): ReactElement => {
         />
         : (
           <>
+            <Title title="Welcome back!" dark={true}/>
             <LoginInput
               placeholder="Email"
               onChange={(e: any) => {
@@ -72,7 +75,7 @@ const Login = (): ReactElement => {
             </LoginButton>
             {Object.keys(error).map((key: string) => {
               return (
-                <p key={key}>{error[key]}</p>
+                <p key={uuid()}>{error[key]}</p>
               )
             })}
           </>)}

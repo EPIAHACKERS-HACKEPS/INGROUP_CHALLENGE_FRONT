@@ -1,7 +1,5 @@
 import styled from '@emotion/styled'
 
-
-
 export const Separator = styled.div`
   border-top: 0.1rem solid #881d1c;
   border-radius: 1rem;
@@ -22,19 +20,19 @@ export const GraphSection = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  height: 500px; 
+  height: 500px;
   border: 1px solid #595959;
   padding: 1rem;
-  `
+`
 
-  export const GraphsSections = styled.div`
+export const GraphsSections = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
   gap: 1rem;
-  `
-  
-  export const GraphTitle = styled.h1`
+`
+
+export const GraphTitle = styled.h1`
   font-size: 1.5rem;
   font-family: 'Arial', sans-serif;
   color: #595959;
@@ -43,7 +41,4 @@ export const GraphSection = styled.div`
   padding: 1rem 0rem 1rem 0rem;
   margin: 0rem 1rem 0rem 1rem;
   border-bottom: 1px solid #595959;
-  `
-  
-   
-  
+`

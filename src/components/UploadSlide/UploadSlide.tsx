@@ -4,7 +4,7 @@ import styles from './upload.module.scss'
 import FileUpload from './HandleFile/FileUpload/fileUpload'
 import { useDispatch, useSelector } from 'react-redux'
 import { addUserStory } from '../../reducers/userStory'
-import { Error } from './styles'
+import { Error, Separator } from './styles'
 import { PuffLoader } from 'react-spinners'
 
 const UploadSlide = (): ReactElement => {
@@ -27,7 +27,7 @@ const UploadSlide = (): ReactElement => {
         pdf.append('files', file)
       }
 
-      fetch('http://95.23.148.176:5000/api/v1/classification', {
+      fetch('http://127.0.0.1:5000/api/v1/classification', {
         headers: {
           ContentType: 'multipart/form-data',
           Authorization: `Bearer ${token}`
@@ -53,28 +53,23 @@ const UploadSlide = (): ReactElement => {
 
   return (
     <div className={styles.centro}>
+      <div className={styles.header}>
+        <div className={styles.title}><h1>Subir archivos</h1></div>
+        <Separator/>
+      </div>
+      <FileUpload
+        files={files}
+        setFiles={setFiles}
+      />
+      <FileList files={files} removeFile={removeFile}/>
+      {error !== '' && <Error>{error}</Error>}
       {loading
-        ? (
-          <PuffLoader
-            color="#881d1c"
-            size={100}
-          />
-          )
+        ? (<PuffLoader
+          color="#881d1c"
+          size={100}
+        />)
         : (
-          <>
-            <div className={styles.header}>
-              <div className={styles.title}><h1>Subir archivos</h1></div>
-              <div className={styles.dropdown}>
-              </div>
-            </div>
-            <FileUpload
-              files={files}
-              setFiles={setFiles}
-            />
-            <button className={styles.sendButton} onClick={handleClick}>Enviar</button>
-            <FileList files={files} removeFile={removeFile}/>
-            {error !== '' && <Error>{error}</Error>}
-          </>
+          <button className={styles.sendButton} onClick={handleClick}>Enviar</button>
           )}
     </div>
   )

@@ -1,24 +1,25 @@
 .title {
-font-family: Tahoma, sans-serif;
-font-size: 10px;
-padding-bottom: 25px;
-margin-bottom: 20px;
-border-bottom: 2px solid lightgrey;
+  font-family: Tahoma, sans-serif;
+  font-size: 10px;
+  padding-bottom: 25px;
 }
-.header{
-    width: 100%;
-    margin: 20px 0px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+
+.header {
+  width: 100%;
+  margin: 20px 0px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
-.centro{
+
+.centro {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
   padding: 0px 70px;
 }
+
 .sendButton {
   background-color: #eeeeee;
   border-radius: 8px;
