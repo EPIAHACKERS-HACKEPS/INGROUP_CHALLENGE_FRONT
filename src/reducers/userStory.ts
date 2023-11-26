@@ -29,11 +29,7 @@ interface UserStoryAction extends Action {
 export const userStoryReducer = (state = initialState, action: UserStoryAction): typeof initialState => {
   switch (action.type) {
     case 'addUserStory':
-      const newStories = action.payload.filter((story) => !state.stories.some((s) => s.id === story.id))
-      return {
-        ...state,
-        stories: [...state.stories, ...newStories]
-      }
+      return { stories: action.payload }
     default:
       return state
   }

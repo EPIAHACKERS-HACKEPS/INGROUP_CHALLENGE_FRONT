@@ -8,6 +8,7 @@ import { API_URL } from '../../constants'
 import { PuffLoader } from 'react-spinners'
 import { useDispatch, useSelector } from 'react-redux'
 import { addUserStory } from '../../reducers/userStory'
+import { v4 as uuid } from 'uuid'
 
 interface UserStory {
   id: number
@@ -68,11 +69,13 @@ const CommentsSlide = (): ReactElement => {
           <Separator/>
           {userStory.map((story: UserStory) => {
             return (
-              <div className="Container">
-                <UserStory title={story.title} description={story.description} id={story.id}/>
+              <div key={uuid()} className="Container">
+                <UserStory key={uuid()} title={story.title} description={story.description} id={story.id}
+                           items={story.items}/>
                 {story.items.map((item: any) => {
                   return (
-                    <Items title={item.title} description={item.description} item={item.item_type.type} id={item.id}/>
+                    <Items key={uuid()} title={item.title} description={item.description} item={item.item_type.type}
+                           id={item.id}/>
                   )
                 })}
               </div>
