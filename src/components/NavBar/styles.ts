@@ -12,10 +12,17 @@ export const NavBarContainer = styled.nav`
   margin: 0;
 `
 export const TitleDiv = styled.nav`
-font-family: Tahoma, sans-serif;
-margin: 1rem 0rem;
-font-size: 2rem;
-letter-spacing: 0.2rem;
-padding-bottom: 1.4rem;
+font-family: Tahoma,sans-serif;
+margin-top: 1rem;
+padding-bottom: 1rem;
 border-bottom: 0.08rem solid gray;
+margin-left: 1rem;
+margin-right: 1rem;
+margin-bottom: 0.5rem;
+`
+
+export const TitleImg = styled.img`
+width: 100%;
+height: 100%;
+padding: 0px 2.1rem
 `

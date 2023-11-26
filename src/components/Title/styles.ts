@@ -5,9 +5,10 @@ interface StyledTitleProps {
 }
 
 export const StyledTitle = styled.h1`
-  font-size: 3rem;
+  font-size: 2.4rem;
   color: ${({ dark }: StyledTitleProps) => dark ? 'black' : 'white'};
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Arial', sans-serif;
   text-align: center;
   margin: 0.25rem;
+  margin-bottom: 1rem;
 `
