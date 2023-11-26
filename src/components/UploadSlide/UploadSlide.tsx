@@ -57,8 +57,8 @@ const UploadSlide = (): ReactElement => {
         files={files}
         setFiles={setFiles}
       />
+            <button className={styles.sendButton} onClick={handleClick}>Enviar</button>
       <FileList files={files} removeFile={removeFile}/>
-      <button className={styles.sendButton} onClick={handleClick}>Enviar</button>
       {error !== '' && <Error>{error}</Error>}
 
     </div>
