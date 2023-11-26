@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addUserStory } from '../../reducers/userStory'
 import { Error, Separator } from './styles'
 import { PuffLoader } from 'react-spinners'
+import { API_URL } from '../../constants'
 
 const UploadSlide = (): ReactElement => {
   const [files, setFiles] = useState<File[]>([])
@@ -27,7 +28,7 @@ const UploadSlide = (): ReactElement => {
         pdf.append('files', file)
       }
 
-      fetch('http://127.0.0.1:5000/api/v1/classification', {
+      fetch(`${API_URL}/classification`, {
         headers: {
           ContentType: 'multipart/form-data',
           Authorization: `Bearer ${token}`

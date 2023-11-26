@@ -5,6 +5,7 @@ import { setLoginToken } from '../../reducers/login'
 import { PuffLoader } from 'react-spinners'
 import Title from '../Title'
 import { v4 as uuid } from 'uuid'
+import { API_URL } from '../../constants'
 
 const Login = (): ReactElement => {
   const [email, setEmail] = React.useState<string>('')
@@ -15,7 +16,7 @@ const Login = (): ReactElement => {
 
   const handleLogin = async (): Promise<void> => {
     setLoading(true)
-    const body = await fetch('http://95.23.148.176:5000/api/v1/user/login', {
+    const body = await fetch(`${API_URL}/user/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
