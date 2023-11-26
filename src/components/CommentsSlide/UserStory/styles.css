@@ -1,39 +1,86 @@
-.prueba {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    height: 200px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 25px 20px 25px 30px;
-    font-family: 'Arial', sans-serif;
-    border-left: 8px solid blue;
+:root {
+    --primary-bg-color: #FFFFFF;
+    --primary-text-color: #333333; /* Darker for better contrast */
+    --title-color: #374151;
+    --border-color: #007bff; /* Slightly brighter blue */
+    --delete-color: #dc3545; /* More vibrant red */
+    --font-family: 'Helvetica Neue', Arial, sans-serif; /* Modern font */
+    --transition-speed: 0.3s;
   }
-  p{
-    font-size: 0.7rem;
-    color: #595959;
-    margin-bottom: 5px;
+  
+  /* General Styles */
+  * {
+    box-sizing: border-box;
   }
-  .titleDelete{
+  .titleDelete {
     display: flex;
     flex-direction: row;
   }
-  .delete{
+  
+
+  .prueba {
+    display: flex;
+    flex-direction: column;
+    width: 22rem; /* Adjusted for better proportion */
+    height: auto; /* Dynamic height */
+    background-color: var(--primary-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    font-family: var(--font-family);
+    border-left: 5px solid var(--border-color); /* Thinner border */
+    transition: box-shadow var(--transition-speed);
+  }
+  
+  .prueba:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Typography */
+  p {
+    font-size: 0.85rem; /* Slightly larger for readability */
+    color: var(--primary-text-color);
+    margin-bottom: 10px;
+  }
+  
+  .title {
+    color: var(--title-color);
+    font-size: 2rem; /* More prominent title */
+    font-weight: 700; /* Bolder for emphasis */
+    margin-bottom: 20px;
+  }
+  
+  .delete {
     margin-left: auto;
     cursor: pointer;
-    color: red;
-    font-size: 20px;
-    font-weight: bolder;
+    color: var(--delete-color);
+    font-size: 1.25rem;
+    transition: color var(--transition-speed);
   }
-  .title {
-    color: #374151;
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 30px;
+  
+  .delete:hover, .delete:focus {
+    color: darken(var(--delete-color), 10%);
   }
   
   .content {
-    margin-top: bottom;
-    font-size: 13px;
+    font-size: 0.9rem;
   }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .prueba {
+      width: 100%;
+      padding: 1rem;
+    }
+  
+    .title {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    p, .content {
+      font-size: 0.8rem;
+    }
+  }
+  

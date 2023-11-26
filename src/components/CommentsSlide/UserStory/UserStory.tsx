@@ -1,7 +1,8 @@
 import React, { type ReactElement } from 'react'
-import './styles.css'
 import { RxCross1 } from 'react-icons/rx'
 import { useSelector } from 'react-redux'
+import './styles.css'
+
 
 const UserStory = ({ title, description, id }: any): ReactElement => {
   const token = useSelector((state: any) => state.loginReducer.token)

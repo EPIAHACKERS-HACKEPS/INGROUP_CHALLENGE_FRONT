@@ -1,80 +1,92 @@
-.feature {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    height: 200px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 25px 20px 25px 30px;
-    font-family: 'Arial', sans-serif;
-    border-left: 8px solid green;
-  }
-  .bug {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    height: 200px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 25px 20px 25px 30px;
-    font-family: 'Arial', sans-serif;
-    border-left: 8px solid red;
+:root {
+  --primary-bg-color: #FFFFFF;
+  --border-feature-color: green;
+  --border-bug-color: red;
+  --button-bg-color: #4caf50;
+  --button-hover-bg-color: darken(var(--button-bg-color), 10%);
+  --save-button-bg-color: #008cba;
+  --font-family: 'Helvetica Neue', Arial, sans-serif;
+  --transition-speed: 0.3s;
 }
-  p{
-    font-size: 0.7rem;
-    color: #595959;
-    margin-bottom: 5px;
-  }
-  .titleDelete{
-    display: flex;
-    flex-direction: row;
-  }
-  .delete{
-    margin-left: auto;
-    cursor: pointer;
-    color: red;
-    font-size: 20px;
-    font-weight: bolder;
-  }
-  .title {
-    color: #374151;
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 30px;
-  }
-  
-  .content {
-    margin-top: bottom;
-    font-size: 13px;
-  }
-  .priority{
-    margin-top: auto;
-    margin-left: auto;
-    font-size: 12px;
-  }
 
-  .editable-input,
+/* Shared Styles for Feature and Bug */
+.feature,
+.bug {
+  display: flex;
+  flex-direction: column;
+  width: 18.75rem; /* Converted to rem */
+  height: auto; /* Dynamic height for content */
+  background-color: var(--primary-bg-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.56rem 1.25rem 1.56rem 1.88rem; /* Converted to rem */
+  font-family: var(--font-family);
+  transition: box-shadow var(--transition-speed);
+}
+
+.feature:hover,
+.bug:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature {
+  border-left: 8px solid var(--border-feature-color);
+}
+
+.bug {
+  border-left: 8px solid var(--border-bug-color);
+}
+
+/* Priority Styles */
+.priority {
+  margin-top: auto;
+  margin-left: auto;
+  font-size: 0.75rem; /* Adjusted for readability */
+}
+
+/* Editable Inputs and Textareas */
+.editable-input,
 .editable-textarea {
   width: 100%;
   margin-bottom: 5px;
 }
 
+/* Button Styles */
 .save-button,
 .edit-button {
-  background-color: #4caf50;
+  background-color: var(--button-bg-color);
   color: white;
   border: none;
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 14px;
+  font-size: 0.875rem; /* Adjusted for consistency */
   margin: 4px 2px;
   cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.save-button:hover,
+.edit-button:hover {
+  background-color: green;
 }
 
 .save-button {
-  background-color: #008cba;
+  background-color: var(--save-button-bg-color);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .feature,
+  .bug {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .priority {
+    font-size: 0.7rem;
+  }
 }

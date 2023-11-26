@@ -1,5 +1,6 @@
 import React, { useState, type ReactElement } from 'react'
 import './styles.css'
+
 import { RxCross1 } from 'react-icons/rx'
 import { useSelector } from 'react-redux'
 
