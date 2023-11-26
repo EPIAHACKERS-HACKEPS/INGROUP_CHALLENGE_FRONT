@@ -1,15 +1,27 @@
-.prueba {
+.feature {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 300px;
     height: 200px;
     background-color: #FFFFFF;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 25px 20px 25px 30px;
     font-family: 'Arial', sans-serif;
-    border-left: 8px solid blue;
+    border-left: 8px solid green;
   }
+  .bug {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 25px 20px 25px 30px;
+    font-family: 'Arial', sans-serif;
+    border-left: 8px solid red;
+}
   p{
     font-size: 0.7rem;
     color: #595959;
