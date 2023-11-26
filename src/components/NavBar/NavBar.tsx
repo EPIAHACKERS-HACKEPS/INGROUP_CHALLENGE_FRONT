@@ -1,5 +1,5 @@
 import React, { type ReactElement } from 'react'
-import { NavBarContainer, TitleDiv } from './styles'
+import { NavBarContainer, TitleDiv, TitleImg } from './styles'
 import { NavBarOption } from '../index'
 import { v4 as uuid } from 'uuid'
 
@@ -14,7 +14,7 @@ const NavBar = ({ options }: NavBarProps): ReactElement => {
   return (
     <NavBarContainer>
       <TitleDiv>
-        <h1>Admin</h1>
+        <TitleImg src='https://xrshop.store/cdn/shop/files/Logo-XRshop_a9bdf643-b213-499c-95b0-6edad8528cd9.png?v=1675854134&width=225'/>
       </TitleDiv>
       {
         options.map((option) => {
