@@ -1,12 +1,10 @@
 import React, { type ReactElement, useState } from 'react'
-import './styles.css'
 import { RxCross1 } from 'react-icons/rx'
 import { useSelector } from 'react-redux'
 import { API_URL } from '../../../constants'
 import Items from '../Items/Items'
 import { v4 as uuid } from 'uuid'
 import './styles.css'
-
 
 const UserStory = ({ title, description, id, items }: any): ReactElement => {
   const [show, setShow] = useState(true)
@@ -47,7 +45,7 @@ const UserStory = ({ title, description, id, items }: any): ReactElement => {
         items.map((item: any) => {
           return (
             <Items key={uuid()} title={item.title} description={item.description} item={item.item_type.type}
-                   id={item.id}
+                   id={item.id} priority={item.priority}
                    parentShow={show}/>
           )
         })
