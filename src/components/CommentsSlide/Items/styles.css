@@ -14,7 +14,7 @@
 .bug {
   display: flex;
   flex-direction: column;
-  width: 18.75rem; /* Converted to rem */
+  width: 19rem; /* Converted to rem */
   height: auto; /* Dynamic height for content */
   background-color: var(--primary-bg-color);
   border-radius: 10px;
