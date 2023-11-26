@@ -49,3 +49,32 @@
     margin-top: bottom;
     font-size: 13px;
   }
+  .priority{
+    margin-top: auto;
+    margin-left: auto;
+    font-size: 12px;
+  }
+
+  .editable-input,
+.editable-textarea {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.save-button,
+.edit-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.save-button {
+  background-color: #008cba;
+}
