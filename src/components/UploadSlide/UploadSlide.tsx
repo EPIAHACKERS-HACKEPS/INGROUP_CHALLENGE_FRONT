@@ -5,10 +5,12 @@ import FileUpload from './HandleFile/FileUpload/fileUpload'
 import { useDispatch, useSelector } from 'react-redux'
 import { addUserStory } from '../../reducers/userStory'
 import { Error } from './styles'
+import { PuffLoader } from 'react-spinners'
 
 const UploadSlide = (): ReactElement => {
   const [files, setFiles] = useState<File[]>([])
   const [error, setError] = useState<string>('')
+  const [loading, setLoading] = useState<boolean>(false)
   const token: string = useSelector((state: any) => state.loginReducer.token)
   const dispatch = useDispatch()
   const removeFile = (filename: string): void => {
@@ -17,6 +19,7 @@ const UploadSlide = (): ReactElement => {
   }
 
   const handleClick = (): void => {
+    setLoading(true)
     if (files.length !== 0) {
       const pdf = new FormData()
 
@@ -42,25 +45,37 @@ const UploadSlide = (): ReactElement => {
         }
       }).catch((error) => {
         console.log(error)
+      }).finally(() => {
+        setLoading(false)
       })
     }
   }
 
   return (
     <div className={styles.centro}>
-      <div className={styles.header}>
-        <div className={styles.title}><h1>Subir archivos</h1></div>
-        <div className={styles.dropdown}>
-        </div>
-      </div>
-      <FileUpload
-        files={files}
-        setFiles={setFiles}
-      />
-      <FileList files={files} removeFile={removeFile}/>
-      <button className={styles.sendButton} onClick={handleClick}>Enviar</button>
-      {error !== '' && <Error>{error}</Error>}
-
+      {loading
+        ? (
+          <PuffLoader
+            color="#881d1c"
+            size={100}
+          />
+          )
+        : (
+          <>
+            <div className={styles.header}>
+              <div className={styles.title}><h1>Subir archivos</h1></div>
+              <div className={styles.dropdown}>
+              </div>
+            </div>
+            <FileUpload
+              files={files}
+              setFiles={setFiles}
+            />
+            <FileList files={files} removeFile={removeFile}/>
+            <button className={styles.sendButton} onClick={handleClick}>Enviar</button>
+            {error !== '' && <Error>{error}</Error>}
+          </>
+          )}
     </div>
   )
 }
