@@ -39,7 +39,7 @@ export const LoginButton = styled.button`
   background-color: #881d1c; /* Change button background color */
   color: #fff; /* Change text color to white */
   font-size: 2rem; /* Increase font size for better readability */
-  border-radius: 5rem;
+  border-radius: 1px;
 
 
   ${commonStyles}
