@@ -37,7 +37,7 @@ const CommentsSlide = (): ReactElement => {
       setLoadComments(false)
       setLoading(true)
 
-      fetch(`${API_URL}/user_story?page=1&per_page=10`, {
+      fetch(`${API_URL}/user_story?page=1&per_page=3`, {
         method: 'get',
         headers: {
           'Content-Type': 'application/json',
