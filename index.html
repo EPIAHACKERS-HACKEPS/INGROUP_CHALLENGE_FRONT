@@ -10,19 +10,53 @@
 <div id="root"></div>
 <script src="/src/main.tsx" type="module"></script>
 <script type="text/javascript">
-  (function (d, t) {
-    var v = d.createElement(t), s = d.getElementsByTagName(t)[0]
-    v.onload = function () {
-      window.voiceflow.chat.load({
-        verify: { projectID: '6561dedafc460970ea49523f' },
-        url: 'https://general-runtime.voiceflow.com',
-        versionID: 'production'
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        console.log("p")
+        window.voiceflow.chat.load({
+          verify: { projectID: '6561dedafc460970ea49523f' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", e => {
+
+    shadowRoot = document.querySelector("#voiceflow-chat").shadowRoot
+
+    shadowRoot.addEventListener("click", e => {
+        btn = shadowRoot.querySelector("div > div.vfrc-widget--chat.c-fikloo > div > article > div.vfrc-prompt.c-koXsWI > button.c-dzcdPv.vfrc-button.c-jjMiVY.vfrc-button--primary.c-jZeVGh.c-jZeVGh-XJvOL-type-warn");
+        btn.addEventListener("click", e => {
+
+    var endpoint = 'http://95.23.148.176:5000/api/v1/assistant/end/';
+    fetch(endpoint, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }})
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
       })
-    }
-    v.src = 'https://cdn.voiceflow.com/widget/bundle.mjs'
-    v.type = 'text/javascript'
-    s.parentNode.insertBefore(v, s)
-  })(document, 'script')
+      .then(data => {
+        console.log('Response data:', data);
+      })
+      .catch(error => {
+        console.error('Fetch error:', error);
+      });
+    
+    });
+      });
+  });
+
 </script>
 </body>
 </html>
